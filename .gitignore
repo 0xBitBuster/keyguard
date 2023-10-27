@@ -5,6 +5,10 @@
 *.userosscache
 *.sln.docstates
 
+# Publishing files
+Package.StoreAssociation.xml
+*.pfx
+
 # User-specific files (MonoDevelop/Xamarin Studio)
 *.userprefs
 
