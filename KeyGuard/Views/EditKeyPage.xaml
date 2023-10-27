@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:viewModels="clr-namespace:KeyGuard.ViewModels"
+             x:Class="KeyGuard.Views.EditKeyPage"
+             Title="Edit Key">
+    <ContentPage.BindingContext>
+        <viewModels:EditKeyViewModel />
+    </ContentPage.BindingContext>
+    
+    <VerticalStackLayout Spacing="10" Margin="20, 20, 20, 0">
+        <Frame Padding="10, 0, 0, 0">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*" />
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="130" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+                <Label Grid.Column="0" Text="Service Name" FontAttributes="Bold" VerticalOptions="Center" />
+                <Entry Grid.Column="1" Text="{Binding Service}" VerticalOptions="Center" />
+            </Grid>
+        </Frame>
+
+        <Frame Padding="10, 0, 0, 0">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*" />
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="130" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+                <Label Grid.Column="0" Text="Service Link" FontAttributes="Bold" VerticalOptions="Center" />
+                <Entry Grid.Column="1" Text="{Binding ServiceLink}" VerticalOptions="Center" />
+            </Grid>
+        </Frame>
+
+        <Frame Padding="10, 0, 0, 0">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*" />
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="130" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+                <Label Grid.Column="0" Text="Username" FontAttributes="Bold" VerticalOptions="Center" />
+                <Entry Grid.Column="1" Text="{Binding Username}" VerticalOptions="Center" />
+            </Grid>
+        </Frame>
+
+        <Frame Padding="10, 0, 0, 0">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*" />
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="130" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+                <Label Grid.Column="0" Text="Email" FontAttributes="Bold" VerticalOptions="Center" />
+                <Entry Grid.Column="1" Text="{Binding Email}" VerticalOptions="Center" />
+            </Grid>
+        </Frame>
+
+        <Frame Padding="10, 0, 0, 0">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*" />
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="130" />
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="40" />
+                </Grid.ColumnDefinitions>
+                <Label Grid.Column="0" Text="Password" FontAttributes="Bold" VerticalOptions="Center" />
+                <Entry Grid.Column="1" Text="{Binding Password}" VerticalOptions="Center" />
+                <ImageButton Grid.Column="2" Source="{AppThemeBinding Light=generate_purple.png, Dark=generate_white.png}"
+                             Command="{Binding GenerateSecurePasswordCommand}"
+                             Padding="7,10,10,10"
+                             HorizontalOptions="Center" VerticalOptions="Center" 
+                             ToolTipProperties.Text="Generate secure password" />
+            </Grid>
+        </Frame>
+
+        <Frame Padding="10, 0, 0, 0">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*" />
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="130" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+                <Label Grid.Column="0" Text="Security Question" FontAttributes="Bold" VerticalOptions="Center" />
+                <Entry Grid.Column="1" Text="{Binding SecurityQuestion}" VerticalOptions="Center" />
+            </Grid>
+        </Frame>
+
+        <Frame Padding="10, 0, 0, 0">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*" />
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="130" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+                <Label Grid.Column="0" Text="Other" FontAttributes="Bold" VerticalOptions="Center" />
+                <Entry Grid.Column="1" Text="{Binding Other}" VerticalOptions="Center" />
+            </Grid>
+        </Frame>
+
+        <Button Text="Update" Command="{Binding UpdateKeyCommand}" Margin="0, 20, 0, 0" />
+        <Button Text="Delete" Command="{Binding DeleteKeyCommand}" />
+        <Button Text="Cancel" Command="{Binding NavigateBackCommand}" />
+    </VerticalStackLayout>
+</ContentPage>

@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:viewModels="clr-namespace:KeyGuard.ViewModels"
+             x:Class="KeyGuard.Views.CreateManagerPage"
+             Title="Create a Manager">
+    <ContentPage.BindingContext>
+        <viewModels:CreateManagerViewModel />
+    </ContentPage.BindingContext>
+    
+    <VerticalStackLayout VerticalOptions="Center" HorizontalOptions="Center" WidthRequest="400" Spacing="20">
+        <Label Text="Create a Password Manager" FontSize="Medium" HorizontalOptions="Center" Margin="0, 0, 0, 20" />
+
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="90" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+            <Label Grid.Column="0" Text="Password" FontAttributes="Bold" VerticalOptions="Center" />
+            <Entry Grid.Column="1" Text="{Binding Password}" IsPassword="True" Placeholder="123456789" VerticalOptions="Center" />
+        </Grid>
+
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="90" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+            <Label Grid.Column="0" Text="Confirm Password" FontAttributes="Bold" VerticalOptions="Center" />
+            <Entry Grid.Column="1" Text="{Binding ConfirmPassword}" IsPassword="True" Placeholder="123456789" VerticalOptions="Center" />
+        </Grid>
+
+        <Button Text="Create" Command="{Binding CreateCommand}" />
+    </VerticalStackLayout>
+</ContentPage>

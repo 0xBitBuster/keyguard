@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:viewModels="clr-namespace:KeyGuard.ViewModels"
+             x:Class="KeyGuard.Views.AddKeyPage"
+             Title="Add Key">
+    <ContentPage.BindingContext>
+        <viewModels:AddKeyViewModel />
+    </ContentPage.BindingContext>
+
+    <VerticalStackLayout Spacing="10" Margin="20, 20, 20, 0">
+        <Frame Padding="10, 0, 0, 0">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*" />
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="130" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+                <Label Grid.Column="0" Text="Service Name" FontAttributes="Bold" VerticalOptions="Center" />
+                <Entry Grid.Column="1" Text="{Binding Service}" Placeholder="Google" VerticalOptions="Center" />
+            </Grid>
+        </Frame>
+
+        <Frame Padding="10, 0, 0, 0">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*" />
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="130" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+                <Label Grid.Column="0" Text="Service Link" FontAttributes="Bold" VerticalOptions="Center" />
+                <Entry Grid.Column="1" Text="{Binding ServiceLink}" Placeholder="https://google.com" VerticalOptions="Center" />
+            </Grid>
+        </Frame>
+
+        <Frame Padding="10, 0, 0, 0">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*" />
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="130" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+                <Label Grid.Column="0" Text="Username" FontAttributes="Bold" VerticalOptions="Center" />
+                <Entry Grid.Column="1" Text="{Binding Username}" Placeholder="john_doe" VerticalOptions="Center" />
+            </Grid>
+        </Frame>
+
+        <Frame Padding="10, 0, 0, 0">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*" />
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="130" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+                <Label Grid.Column="0" Text="Email" FontAttributes="Bold" VerticalOptions="Center" />
+                <Entry Grid.Column="1" Text="{Binding Email}" Placeholder="johndoe@gmail.com" VerticalOptions="Center" />
+            </Grid>
+        </Frame>
+
+        <Frame Padding="10, 0, 0, 0">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*" />
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="130" />
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="40" />
+                </Grid.ColumnDefinitions>
+                <Label Grid.Column="0" Text="Password" FontAttributes="Bold" VerticalOptions="Center" />
+                <Entry Grid.Column="1" Text="{Binding Password}" Placeholder="123456789" VerticalOptions="Center" />
+                <ImageButton Grid.Column="2" Source="{AppThemeBinding Light=generate_purple.png, Dark=generate_white.png}"
+                             Command="{Binding GenerateSecurePasswordCommand}"
+                             Padding="7,10,10,10"
+                             HorizontalOptions="Center" VerticalOptions="Center" 
+                             ToolTipProperties.Text="Generate secure password" />
+            </Grid>
+        </Frame>
+
+        <Frame Padding="10, 0, 0, 0">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*" />
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="130" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+                <Label Grid.Column="0" Text="Security Question" FontAttributes="Bold" VerticalOptions="Center" />
+                <Entry Grid.Column="1" Text="{Binding SecurityQuestion}" Placeholder="What is your favourite car? Mercedes." VerticalOptions="Center" />
+            </Grid>
+        </Frame>
+
+        <Frame Padding="10, 0, 0, 0">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*" />
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="130" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+                <Label Grid.Column="0" Text="Other" FontAttributes="Bold" VerticalOptions="Center" />
+                <Entry Grid.Column="1" Text="{Binding Other}" Placeholder="I play basketball." VerticalOptions="Center" />
+            </Grid>
+        </Frame>
+
+        <Button Text="Save" Command="{Binding SaveKeyCommand}" Margin="0, 20, 0, 0" />
+        <Button Text="Cancel" Command="{Binding NavigateBackCommand}" />
+    </VerticalStackLayout>
+</ContentPage>
