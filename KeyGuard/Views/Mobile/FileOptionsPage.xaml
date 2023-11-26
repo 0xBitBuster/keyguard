@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:viewModels="clr-namespace:KeyGuard.ViewModels"
+             x:Class="KeyGuard.Views.Mobile.FileOptionsPage"
+             Title="File">
+    <ContentPage.BindingContext>
+        <viewModels:AppShellViewModel />
+    </ContentPage.BindingContext>
+    
+    <VerticalStackLayout>
+        <Label Text="File" VerticalOptions="Center" HorizontalOptions="Center" TextColor="DarkGray" FontSize="12" Margin="0,20,0,0" />
+
+        <Label Text="New File" VerticalOptions="Center" HorizontalOptions="Center" Margin="0,5,0,0">
+            <Label.GestureRecognizers>
+                <TapGestureRecognizer Command="{Binding CreateFileCommand}" />
+            </Label.GestureRecognizers>
+        </Label>
+        <Label Text="Open File" VerticalOptions="Center" HorizontalOptions="Center" Margin="0,15,0,0">
+            <Label.GestureRecognizers>
+                <TapGestureRecognizer Command="{Binding OpenFileCommand}" />
+            </Label.GestureRecognizers>
+        </Label>
+        <Label Text="Change Password" VerticalOptions="Center" HorizontalOptions="Center" Margin="0,15,0,0">
+            <Label.GestureRecognizers>
+                <TapGestureRecognizer Command="{Binding ChangePasswordCommand}" />
+            </Label.GestureRecognizers>
+        </Label>
+
+        <Rectangle Fill="#222" HorizontalOptions="Fill" HeightRequest="3" Margin="20" />
+        <Label Text="Export" VerticalOptions="Center" HorizontalOptions="Center" TextColor="DarkGray" FontSize="12" />
+
+        <Label Text="As Text / JSON" VerticalOptions="Center" HorizontalOptions="Center" Margin="0,5,0,0">
+            <Label.GestureRecognizers>
+                <TapGestureRecognizer Command="{Binding ExportAsTextCommand}" />
+            </Label.GestureRecognizers>
+        </Label>
+        <Label Text="In Image (Unencrypted)" VerticalOptions="Center" HorizontalOptions="Center" Margin="0,15,0,0">
+            <Label.GestureRecognizers>
+                <TapGestureRecognizer Command="{Binding EmbedInImageCommand}" />
+            </Label.GestureRecognizers>
+        </Label>
+        <Label Text="In Image (Encrypted)" VerticalOptions="Center" HorizontalOptions="Center" Margin="0,15,0,0">
+            <Label.GestureRecognizers>
+                <TapGestureRecognizer Command="{Binding EmbedInImageEncryptedCommand}" />
+            </Label.GestureRecognizers>
+        </Label>
+
+        <Rectangle Fill="#222" HorizontalOptions="Fill" HeightRequest="3" Margin="20" />
+        <Label Text="Import" VerticalOptions="Center" HorizontalOptions="Center" TextColor="DarkGray" FontSize="12" />
+
+        <Label Text="From Text / JSON" VerticalOptions="Center" HorizontalOptions="Center" Margin="0,5,0,0">
+            <Label.GestureRecognizers>
+                <TapGestureRecognizer Command="{Binding ImportFromTextCommand}" />
+            </Label.GestureRecognizers>
+        </Label>
+        <Label Text="From Image (Unencrypted)" VerticalOptions="Center" HorizontalOptions="Center" Margin="0,15,0,0">
+            <Label.GestureRecognizers>
+                <TapGestureRecognizer Command="{Binding ImportFromUnencryptedImageCommand}" />
+            </Label.GestureRecognizers>
+        </Label>
+        <Label Text="From Image (Encrypted)" VerticalOptions="Center" HorizontalOptions="Center" Margin="0,15,0,0">
+            <Label.GestureRecognizers>
+                <TapGestureRecognizer Command="{Binding ImportFromEncryptedImageCommand}" />
+            </Label.GestureRecognizers>
+        </Label>
+
+        <Rectangle Fill="#222" HorizontalOptions="Fill" HeightRequest="3" Margin="20" />
+        <Label Text="Preferences" VerticalOptions="Center" HorizontalOptions="Center" TextColor="DarkGray" FontSize="12" />
+
+        <Label Text="Password Generator" VerticalOptions="Center" HorizontalOptions="Center" Margin="0,5,0,0">
+            <Label.GestureRecognizers>
+                <TapGestureRecognizer Command="{Binding ConfigurePasswordGeneratorCommand}" />
+            </Label.GestureRecognizers>
+        </Label>
+    </VerticalStackLayout>
+</ContentPage>

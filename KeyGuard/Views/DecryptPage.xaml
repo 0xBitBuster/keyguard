@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:viewModels="clr-namespace:KeyGuard.ViewModels"
+             x:Class="KeyGuard.Views.DecryptPage"
+             Title="Decrypt File">
+    <ContentPage.BindingContext>
+        <viewModels:DecryptViewModel />
+    </ContentPage.BindingContext>
+
+    <VerticalStackLayout VerticalOptions="Center" HorizontalOptions="Center" WidthRequest="400">
+        <Label Text="Decrypt the file using your password" FontSize="Medium" HorizontalOptions="Center" Margin="0, 0, 0, 10" />
+        <Label Text="{Binding FilePath}" HorizontalOptions="Center" FontSize="Caption" TextColor="Grey" Margin="0, 0, 0, 30" />
+
+        <Grid Margin="0,0,0,15">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="90" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+            <Label Grid.Column="0" Text="Password" FontAttributes="Bold" VerticalOptions="Center" />
+            <Entry Grid.Column="1" Text="{Binding Password}" IsPassword="True" Placeholder="123456789" VerticalOptions="Center" />
+        </Grid>
+
+        <Button Text="Decrypt" Command="{Binding DecryptCommand}" />
+    </VerticalStackLayout>
+</ContentPage>

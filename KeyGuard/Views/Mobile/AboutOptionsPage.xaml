@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:viewModels="clr-namespace:KeyGuard.ViewModels"
+             x:Class="KeyGuard.Views.Mobile.AboutOptionsPage"
+             Title="About">
+    <ContentPage.BindingContext>
+        <viewModels:AppShellViewModel />
+    </ContentPage.BindingContext>
+    
+    <VerticalStackLayout>
+        <Label Text="About" VerticalOptions="Center" HorizontalOptions="Center" TextColor="DarkGray" FontSize="12" Margin="0,20,0,0" />
+
+        <Label Text="Github" VerticalOptions="Center" HorizontalOptions="Center" Margin="0,5,0,0">
+            <Label.GestureRecognizers>
+                <TapGestureRecognizer Command="{Binding ShowGithubCommand}" />
+            </Label.GestureRecognizers>
+        </Label>
+        <Label Text="Version" VerticalOptions="Center" HorizontalOptions="Center" Margin="0,15,0,0">
+            <Label.GestureRecognizers>
+                <TapGestureRecognizer Command="{Binding ShowVersionCommand}" />
+            </Label.GestureRecognizers>
+        </Label>
+        <Label Text="License" VerticalOptions="Center" HorizontalOptions="Center" Margin="0,15,0,0">
+            <Label.GestureRecognizers>
+                <TapGestureRecognizer Command="{Binding ShowLicenseCommand}" />
+            </Label.GestureRecognizers>
+        </Label>
+    </VerticalStackLayout>
+</ContentPage>

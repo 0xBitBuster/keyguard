@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:viewModels="clr-namespace:KeyGuard.ViewModels"
+             x:Class="KeyGuard.Views.HomePage"
+             Title="Home">
+    <ContentPage.BindingContext>
+        <viewModels:HomeViewModel />
+    </ContentPage.BindingContext>
+    
+    <VerticalStackLayout VerticalOptions="Center" HorizontalOptions="Center">
+        <Label Text="KeyGuard" FontSize="Large" FontAttributes="Bold" HorizontalOptions="Center" Margin="0, 0, 0, 5" />
+        <Label Text="A simple Password manager made in .NET Maui with AES Encryption." HorizontalOptions="Center" HorizontalTextAlignment="Center" Margin="0, 0, 0, 25" />
+
+        <HorizontalStackLayout HorizontalOptions="Center">
+            <Button Text="New File" Command="{Binding GoToCreateManagerCommand}" />
+            <Label Text="or" VerticalOptions="Center" Margin="20, 0, 20, 0" />
+            <Button Text="Open File" Command="{Binding OpenFileCommand}" />
+        </HorizontalStackLayout>
+    </VerticalStackLayout>
+</ContentPage>

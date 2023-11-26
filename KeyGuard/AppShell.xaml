@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Shell
+    x:Class="KeyGuard.AppShell"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:local="clr-namespace:KeyGuard"
+    xmlns:views="clr-namespace:KeyGuard.Views"
+    xmlns:mobileViews="clr-namespace:KeyGuard.Views.Mobile"
+    xmlns:viewModels="clr-namespace:KeyGuard.ViewModels"
+    Shell.FlyoutBehavior="Disabled">
+    <Shell.BindingContext>
+        <viewModels:AppShellViewModel />
+    </Shell.BindingContext>
+
+    <Shell.TitleView>
+        <Grid Margin="0, 0, 10, 0">
+             <Label Text="KeyGuard" TextColor="White" FontAttributes="Bold" VerticalOptions="Center" />
+        </Grid>
+    </Shell.TitleView>
+
+    <Shell.MenuBarItems>
+        <MenuBarItem Text="File">
+            <MenuFlyoutItem Text="New" Command="{Binding CreateFileCommand}" />
+            <MenuFlyoutItem Text="Open" Command="{Binding OpenFileCommand}" />
+            <MenuFlyoutItem Text="Change Password" Command="{Binding ChangePasswordCommand}" />
+            <MenuFlyoutSeparator />
+            <MenuFlyoutSubItem Text="Export">
+                <MenuFlyoutItem Text="As Text/JSON" Command="{Binding ExportAsTextCommand}" />
+                <MenuFlyoutItem Text="In Image (Unencrypted)" Command="{Binding EmbedInImageCommand}" />
+                <MenuFlyoutItem Text="In Image (Encrypted)" Command="{Binding EmbedInImageEncryptedCommand}" />
+            </MenuFlyoutSubItem>
+            <MenuFlyoutSubItem Text="Import">
+                <MenuFlyoutItem Text="From Text/JSON" Command="{Binding ImportFromTextCommand}" />
+                <MenuFlyoutItem Text="From Image (Unencrypted)" Command="{Binding ImportFromUnencryptedImageCommand}" />
+                <MenuFlyoutItem Text="From Image (Encrypted)" Command="{Binding ImportFromEncryptedImageCommand}" />
+            </MenuFlyoutSubItem>
+            <MenuFlyoutSeparator />
+            <MenuFlyoutSubItem Text="Preferences">
+                <MenuFlyoutItem Text="Password Generator" Command="{Binding ConfigurePasswordGeneratorCommand}" />
+            </MenuFlyoutSubItem>
+        </MenuBarItem>
+        <MenuBarItem Text="About">
+            <MenuFlyoutItem Text="Github" Command="{Binding ShowGithubCommand}" />
+            <MenuFlyoutItem Text="Version" Command="{Binding ShowVersionCommand}" />
+            <MenuFlyoutItem Text="License" Command="{Binding ShowLicenseCommand}" />
+        </MenuBarItem>
+    </Shell.MenuBarItems>
+
+    <TabBar IsVisible="{Binding IsMobile}" >
+        <Tab Title="Home" Icon="home.svg">
+            <ShellContent ContentTemplate="{DataTemplate views:HomePage}" />
+        </Tab>
+        <Tab Title="File" Icon="file.svg">
+            <ShellContent ContentTemplate="{DataTemplate mobileViews:FileOptionsPage}" />
+        </Tab>
+        <Tab Title="About" Icon="info.svg">
+            <ShellContent ContentTemplate="{DataTemplate mobileViews:AboutOptionsPage}" />
+        </Tab>
+    </TabBar>
+
+    <ShellContent
+        Title="Home"
+        ContentTemplate="{DataTemplate views:HomePage}"/>
+</Shell>
