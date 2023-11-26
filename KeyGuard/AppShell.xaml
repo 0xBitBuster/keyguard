@@ -14,7 +14,7 @@
 
     <Shell.TitleView>
         <Grid Margin="0, 0, 10, 0">
-             <Label Text="KeyGuard" TextColor="White" FontAttributes="Bold" VerticalOptions="Center" />
+             <Label Text="KeyGuard" TextColor="White" FontAttributes="Bold" VerticalOptions="Center" HorizontalOptions="End" />
         </Grid>
     </Shell.TitleView>
 

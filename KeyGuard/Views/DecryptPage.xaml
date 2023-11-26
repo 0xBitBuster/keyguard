@@ -8,7 +8,7 @@
         <viewModels:DecryptViewModel />
     </ContentPage.BindingContext>
 
-    <VerticalStackLayout VerticalOptions="Center" HorizontalOptions="Center" WidthRequest="400">
+    <VerticalStackLayout VerticalOptions="Center" HorizontalOptions="Center" WidthRequest="400" Padding="20">
         <Label Text="Decrypt the file using your password" FontSize="Medium" HorizontalOptions="Center" Margin="0, 0, 0, 10" />
         <Label Text="{Binding FilePath}" HorizontalOptions="Center" FontSize="Caption" TextColor="Grey" Margin="0, 0, 0, 30" />
 
