@@ -93,6 +93,10 @@ namespace KeyGuard.ViewModels
 
         [RelayCommand]
         public async Task DeleteKey() {
+            bool continueDeletetion = await Shell.Current.DisplayAlert("Attention required!", "Are you sure you want to delete the key?", "Yes", "No");
+            if (continueDeletetion == false)
+                return;
+
             KeyRepository.DeleteKey(key.Id);
 
             await Shell.Current.GoToAsync("..");

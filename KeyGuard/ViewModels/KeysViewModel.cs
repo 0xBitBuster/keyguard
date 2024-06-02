@@ -62,8 +62,12 @@ namespace KeyGuard.ViewModels
         }
 
         [RelayCommand]
-        public void DeleteKey(object key)
+        public async void DeleteKey(object key)
         {
+            bool continueDeletetion = await Shell.Current.DisplayAlert("Attention required!", "Are you sure you want to delete the key?", "Yes", "No");
+            if (continueDeletetion == false)
+                return;
+
             KeyRepository.DeleteKey(((Key)key).Id);
 
             Keys = new ObservableCollection<Key>(KeyRepository.Keys);

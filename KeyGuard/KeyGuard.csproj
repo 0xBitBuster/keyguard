@@ -101,7 +101,7 @@
 
 	<ItemGroup>
 		<!-- App Icon -->
-		<MauiIcon Include="Resources\AppIcon\appicon.svg" />
+		<MauiIcon Include="Resources\AppIcon\appicon.svg" Color="#FFFFFF" />
 
 		<!-- Splash Screen -->
 
@@ -194,7 +194,7 @@
 	  <MauiAsset Include="Resources\Images\file.svg" />
 	  <MauiAsset Include="Resources\Images\home.svg" />
 	  <MauiAsset Include="Resources\Images\info.svg" />
-	  <MauiSplashScreen Include="Resources\Splash\splash.svg">
+	  <MauiSplashScreen Include="Resources\Splash\splash.svg" Color="#FFFFFF">
 	    <CopyToOutputDirectory></CopyToOutputDirectory>
 	  </MauiSplashScreen>
 	</ItemGroup>

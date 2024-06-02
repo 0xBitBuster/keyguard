@@ -21,7 +21,7 @@
                 <ColumnDefinition Width="*" />
             </Grid.ColumnDefinitions>
             <Label Grid.Column="0" Text="Password" FontAttributes="Bold" VerticalOptions="Center" />
-            <Entry Grid.Column="1" Text="{Binding Password}" IsPassword="True" Placeholder="123456789" VerticalOptions="Center" />
+            <Entry Grid.Column="1" Text="{Binding Password}" IsPassword="True" Placeholder="123456789" VerticalOptions="Center" ReturnCommand="{Binding DecryptCommand}" />
         </Grid>
 
         <Button Text="Decrypt" Command="{Binding DecryptCommand}" />
