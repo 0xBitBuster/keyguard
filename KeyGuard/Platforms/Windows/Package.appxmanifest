@@ -6,7 +6,7 @@
   xmlns:rescap="http://schemas.microsoft.com/appx/manifest/foundation/windows10/restrictedcapabilities"
   IgnorableNamespaces="uap rescap">
 
-  <Identity Name="178860xBitBuster.47921CF5A6387" Publisher="CN=CE6F20B4-4D4B-4F16-84E3-168C2E9FEBAA" Version="1.0.1.0" />
+  <Identity Name="178860xBitBuster.47921CF5A6387" Publisher="CN=0xBitBuster" Version="1.0.2.0" />
 
   <mp:PhoneIdentity PhoneProductId="ffe53128-dea6-4354-b1b4-3e6896822331" PhonePublisherId="00000000-0000-0000-0000-000000000000"/>
 

@@ -28,9 +28,10 @@ git clone https://github.com/0xBitBuster/keyguard.git
 ## Installation Wizard
 If you want to build a Installation Wizard for windows, follow the steps below.
 
-1. Build the project in _release_ mode
-2. Download [AdvancedInstaller](https://www.advancedinstaller.com/download.html) and create a new project
-3. Import the _bin_ directory which contains the .exe
+1. Create an executable application instead of a packaged one by following [this](https://stackoverflow.com/questions/73718305/easiest-way-to-launch-a-maui-app-exe-on-windows) answer
+2. Build the project in _release_ mode
+3. Download [AdvancedInstaller](https://www.advancedinstaller.com/download.html) and create a new project
+4. Import the _bin_ directory which contains the .exe
 
 
 ## License
