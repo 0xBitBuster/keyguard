@@ -33,7 +33,7 @@ namespace KeyGuard.Models
         private string _username;
 
         [JsonProperty(PropertyName = "e")]
-        [EmailAddress(ErrorMessage = "Email address is invalid.")]
+        [MaxLength(100, ErrorMessage = "Email must be 300 characters at most.")]
         [ObservableProperty]
         private string _email;
 
